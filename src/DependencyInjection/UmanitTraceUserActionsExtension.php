@@ -29,10 +29,11 @@ class UmanitTraceUserActionsExtension extends Extension implements PrependExtens
             'channels' => ['umanit_trace_user_actions'],
             'handlers' => [
                 'umanit_trace_user_actions' => [
-                    'type'     => 'rotating_file',
-                    'level'    => 'info',
-                    'path'     => '%kernel.logs_dir%/umanit-trace-user-actions-%kernel.environment%.log',
-                    'channels' => 'umanit_trace_user_actions',
+                    'type'      => 'rotating_file',
+                    'max_files' => 180,
+                    'level'     => 'info',
+                    'path'      => '%kernel.logs_dir%/umanit-trace-user-actions-%kernel.environment%.log',
+                    'channels'  => 'umanit_trace_user_actions',
                 ],
             ],
         ]);

@@ -10,6 +10,8 @@ For example, login and logout will be logged as follows:
 [2022-07-13T09:19:41.715806+02:00] umanit_trace_user_actions.INFO: User logout {"user":"vdebona@umanit.fr"} []
 ```
 
+By default, logs are stored in rotating files, with a retention of 180 files which is approximately 6 months.
+
 ## Installation
 
 Use the package manager [composer](https://getcomposer.org/) to install the extension.
@@ -28,6 +30,20 @@ return [
     // ...
     Umanit\TraceUserActions\UmanitTraceUserActionsBundle::class => ['all' => true],
 ];
+```
+
+## Configuration
+
+There is no need to configure the bundle, it just works. However, if you want, you can modify the Monolog's
+configuration by overriding the `umanit_trace_user_actions` handler.
+
+For example, if you want to reduce the maximum number of files:
+
+```yaml
+monolog:
+    handlers:
+        umanit_trace_user_actions:
+            max_files: 10
 ```
 
 ## Usage
