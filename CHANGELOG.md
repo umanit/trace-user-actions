@@ -7,8 +7,16 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.0.1] - 2022-07-13
+
+### Fixed
+
+- Symfony constraint for 5.x
+
 ## 1.0.0 - 2022-07-13
 
 First release 🎉
+
+[1.0.1]: https://github.com/umanit/trace-user-actions/compare/1.0.1...1.0.0
 
 [Unreleased]: https://github.com/umanit/trace-user-actions/compare/1.0.0...main
