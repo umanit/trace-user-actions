@@ -1,0 +1,21 @@
+{
+  "name": "umanit/trace-user-actions",
+  "description": "A bundle to trace user actions.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "trace",
+    "user",
+    "actions"
+  ],
+  "require": {
+    "php": ">=7.1.3",
+    "symfony/framework-bundle": "^4.4|^5.4|^6.0",
+    "symfony/security-bundle": "^4.4|^5.4|^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Umanit\\TraceUserActions\\": "src/"
+    }
+  }
+}

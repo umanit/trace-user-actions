@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="umanit.traceuseractions.logger" alias="monolog.logger.umanit_trace_user_actions" />
+        <service id="umanit.traceuseractions.add_action_subscriber"
+                 class="Umanit\TraceUserActions\Event\Subscriber\AddActionSubscriber">
+            <argument type="service" id="umanit.traceuseractions.logger" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+        <service id="umanit.traceuseractions.on_interactive_login_subscriber"
+                 class="Umanit\TraceUserActions\Event\Subscriber\OnInteractiveLoginSubscriber">
+            <argument type="service" id="event_dispatcher" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+        <service id="umanit.traceuseractions.on_logout_subscriber"
+                 class="Umanit\TraceUserActions\Event\Subscriber\OnLogoutSubscriber">
+            <argument type="service" id="event_dispatcher" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+    </services>
+</container>
